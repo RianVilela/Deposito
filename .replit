@@ -8,7 +8,7 @@ channel = "stable-25_05"
 run = ["sh", "-c", "node index.js"]
 
 [workflows]
-runButton = "Desenvolvimento"
+runButton = "NPM Dev"
 
 [[workflows.workflow]]
 name = "Desenvolvimento"
@@ -27,3 +27,25 @@ mode = "sequential"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "cd sistema-empresarial && npm run dev -- --host 0.0.0.0 --port 5000"
+
+[[workflows.workflow]]
+name = "Vite Direto"
+author = 24367174
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd sistema-empresarial && node node_modules/vite/bin/vite.js --host 0.0.0.0 --port 5000"
+
+[[workflows.workflow]]
+name = "NPM Dev"
+author = 24367174
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd sistema-empresarial && npm run dev -- --host 0.0.0.0 --port 5000"
+
+[[ports]]
+localPort = 5000
+externalPort = 80
