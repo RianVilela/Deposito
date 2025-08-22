@@ -1,0 +1,36 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  input:-webkit-autofill {
+    background-color: #1e1e1e !important;
+    -webkit-box-shadow: 0 0 0px 1000px #1e1e1e inset !important;
+    -webkit-text-fill-color: white !important;
+    color: white !important;
+    caret-color: white;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+/* index.css ou global.css */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* ou #1e1e1e para combinar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(53, 53, 53); /* cpm-red */
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+
+
