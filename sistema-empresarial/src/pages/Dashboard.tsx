@@ -3,6 +3,8 @@ import { getFornecedores, getMateriais, getEstoques } from '../api/api'; // Impo
 import Card from '../components/Card';
 import AtividadeRecente from '../components/AtividadeRecente'; 
 import AlertasEstoque from '../components/AlertasEstoque';
+import EstatisticasRapidas from '../components/EstatisticasRapidas';
+import { Users, Package, Warehouse, TrendingUp } from 'lucide-react';
 
 // Tipagem dos dados que esperamos da API
 interface Fornecedor {
@@ -72,27 +74,39 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <>
+    <div className="animate-fadeIn">
       <h2 className="text-2xl font-bold mb-6">Dashboard</h2>
+      
+      <EstatisticasRapidas />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <Card 
           title="Total de Fornecedores" 
           value={fornecedores.length.toString()}
           delta={`${calculatePercentageChange(fornecedores.length, previousData.fornecedores).toFixed(2)}`} 
-          color="text-yellow-400" 
+          color="text-yellow-400"
+          icon={<Users size={24} />}
         />
         <Card 
           title="Total de Materiais" 
           value={materiais.length.toString()}
           delta={`${calculatePercentageChange(materiais.length, previousData.materiais).toFixed(2)}`} 
-          color="text-green-400" 
+          color="text-green-400"
+          icon={<Package size={24} />}
         />
         <Card 
           title="Estoques Ativos" 
           value={estoques.length.toString()}
           delta={`${calculatePercentageChange(estoques.length, previousData.estoques).toFixed(2)}`} 
-          color="text-purple-400" 
+          color="text-purple-400"
+          icon={<Warehouse size={24} />}
+        />
+        <Card 
+          title="Valor Total" 
+          value="R$ 0,00"
+          delta="0.00" 
+          color="text-blue-400"
+          icon={<TrendingUp size={24} />}
         />
       </div>
 
@@ -100,6 +114,6 @@ export default function Dashboard() {
         <AtividadeRecente />  {/* Exibe a atividade recente */}
         <AlertasEstoque />    {/* Exibe os alertas de estoque */}
       </div>
-    </>
+    </div>
   );
 }

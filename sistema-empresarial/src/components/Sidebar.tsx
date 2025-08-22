@@ -4,8 +4,13 @@ import { NavLink } from 'react-router-dom';
 
 export default function Sidebar() {
   return (
-    <aside className="w-64 h-screen bg-cpm-panel border-r border-cpm-bg p-6 flex flex-col fixed top-0 left-0">
-      <h1 className="text-xl font-bold mb-10 text-white">Sistema Estoque</h1>
+    <aside className="w-64 h-screen bg-cpm-panel border-r border-cpm-bg p-6 flex flex-col fixed top-0 left-0 z-50">
+      <div className="flex items-center gap-3 mb-10">
+        <div className="w-10 h-10 bg-cpm-red rounded-lg flex items-center justify-center">
+          <Warehouse className="text-white" size={24} />
+        </div>
+        <h1 className="text-xl font-bold text-white">Sistema Estoque</h1>
+      </div>
 
       <nav className="flex flex-col gap-2">
         <NavLink

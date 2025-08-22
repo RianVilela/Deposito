@@ -6,3 +6,15 @@ channel = "stable-25_05"
 
 [deployment]
 run = ["sh", "-c", "node index.js"]
+
+[workflows]
+runButton = "Desenvolvimento"
+
+[[workflows.workflow]]
+name = "Desenvolvimento"
+author = 24367174
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd sistema-empresarial && npm run dev"
