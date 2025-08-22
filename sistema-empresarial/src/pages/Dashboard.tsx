@@ -3,7 +3,6 @@ import { getFornecedores, getMateriais, getEstoques } from '../api/api'; // Impo
 import Card from '../components/Card';
 import AtividadeRecente from '../components/AtividadeRecente'; 
 import AlertasEstoque from '../components/AlertasEstoque';
-import EstatisticasRapidas from '../components/EstatisticasRapidas';
 import { Users, Package, Warehouse, TrendingUp } from 'lucide-react';
 
 // Tipagem dos dados que esperamos da API
@@ -77,8 +76,6 @@ export default function Dashboard() {
     <div className="animate-fadeIn">
       <h2 className="text-2xl font-bold mb-6">Dashboard</h2>
       
-      <EstatisticasRapidas />
-
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <Card 
           title="Total de Fornecedores" 
