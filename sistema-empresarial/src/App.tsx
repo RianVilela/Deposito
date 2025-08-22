@@ -6,6 +6,9 @@ import Sidebar from './components/Sidebar';
 import Estoque from './pages/Estoque';
 import Entrada from './pages/entrada';
 import Depositos from './pages/Depositos'; // Página de Depósitos
+import NotasFiscais from './pages/NotasFiscais';
+import Saidas from './pages/Saidas';
+import Relatorios from './pages/Relatorios';
 // import CadastroForm from './components/CadastroForm';
 import DepositoUnico from './components/DepositoUnico';
 
@@ -21,7 +24,9 @@ function App() {
           <Route path="/entrada" element={<Entrada />} />
           <Route path="/depositos" element={<Depositos />} /> 
           <Route path="/deposito/:depositoId" element={<DepositoUnico />} />
-
+          <Route path="/notas" element={<NotasFiscais />} />
+          <Route path="/saidas" element={<Saidas />} />
+          <Route path="/relatorios" element={<Relatorios />} />
         </Routes>
       </div>
     </div>
